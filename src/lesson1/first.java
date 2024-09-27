@@ -69,8 +69,8 @@ public class first {
 //        3.4 Дано: целочисленное число n, начальное значение может быть любое.
 //        Напишите программу, которая определяет: (можно сделать не все варианты, а выбрать понравившийся)
 //        а) количество цифр в нем;
-        int n = 45237;
-        String z = Integer.toString(n);
+//        int n = 45237;
+//        String z = Integer.toString(n);
 //        int countN = 0;
 //        for(int i =0; i< z.length(); i++) {
 //            countN++;
@@ -121,13 +121,37 @@ public class first {
 //        System.out.println(n);
 
 //        з) сумму его первой и последней цифр.
-        int a = n;
-        int b = n%10;
-        for (int i = 0; i < z.length()-1; i++){
-            a = a / 10;
-        }
-        int sumFirstLast = a + b;
-        System.out.println(sumFirstLast);
+//        int a = n;
+//        int b = n%10;
+//        for (int i = 0; i < z.length()-1; i++){
+//            a = a / 10;
+//        }
+//        int sumFirstLast = a + b;
+//        System.out.println(sumFirstLast);
 
+//        3.5 Дано: строка str, начальное значение может быть любое.
+//        Напишите программу, считающую количество цифр 1, 2, 3 в строке.
+//        Пример: str = "сегодня мы купили 1 яблоко, 1 грушу и 2 апельсина"
+//        Кол-во 1: 2
+//        Кол-во 2: 1
+//        Кол-во 3: 0
+
+        String str = "сегодня мы купили 1 яблоко, 1 грушу и 2 апельсина";
+        int a = 0;
+        int b = 0;
+        int c = 0;
+
+        for(int i =0; i< str.length(); i++) {
+            if (str.charAt(i) == '1') {
+                a++;
+            } else if (str.charAt(i) == '2') {
+                b++;
+            } else if (str.charAt(i) == '3'){
+                c++;
+            }
+        }
+        System.out.println("Кол-во 1: " + a);
+        System.out.println("Кол-во 2: " + b);
+        System.out.println("Кол-во 3: " + c);
     }
 }
