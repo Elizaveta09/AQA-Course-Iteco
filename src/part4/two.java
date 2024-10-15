@@ -2,13 +2,15 @@ package part4;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 public class two {
 
     public static void main (String[] args) {
 
-        median();
+        //median();
+        element();
     }
 
     public static void median(){
@@ -61,5 +63,21 @@ public class two {
             System.out.println(medianRes2);
         }
 
+    }
+
+    public static void element(){
+        List<Integer> elements = Arrays.asList(1,1,4,5,3,1,2,3,4);
+
+        HashMap<String, Integer> hashmap = new HashMap <>();
+
+        for(int i=0; i < elements.size(); i++){
+            if (hashmap.containsKey(String.valueOf(elements.get(i)))){
+                hashmap.put(String.valueOf(elements.get(i)), hashmap.get(String.valueOf(elements.get(i)))+1);
+            }else{
+                hashmap.put(String.valueOf(elements.get(i)), 1);
+            }
+        }
+
+        System.out.println(hashmap);
     }
 }
