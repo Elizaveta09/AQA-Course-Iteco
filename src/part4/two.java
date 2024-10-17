@@ -1,16 +1,16 @@
 package part4;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
+
+import static java.lang.Math.ceil;
 
 public class two {
 
     public static void main (String[] args) {
 
         //median();
-        element();
+        //element();
+        queue();
     }
 
     public static void median(){
@@ -79,5 +79,46 @@ public class two {
         }
 
         System.out.println(hashmap);
+    }
+
+    public static void queue(){
+//        Задача №2: Очередь в банк (Со звёздочкой)
+//        В отделении банка работает K окон, в общей очереди стоит N человек, каждому из которых понадобится 10 минут на обслуживание.
+//        Вывести всех посететителей, кто подойдет к окнам через M минут от начала смены.
+//
+//        Пример:
+//        Очередь N {Миша, Петя, Катя, |Игорь, Самуил, Ева, |Светлана, Матвей}
+//         Мин              10                   20                  30
+//        Окно K = 3
+//        M = 15 минут
+//        Ответ: на 15 минуте у окон будут стоять Игорь, Самуил, Ева
+
+        List<String> queue = new ArrayList<>();
+        List<String> resultQueue = new ArrayList<>();
+
+        queue.add("Миша");
+        queue.add("Петя");
+        queue.add("Катя");
+        queue.add("Игорь");
+        queue.add("Самуил");
+        queue.add("Ева");
+        queue.add("Светлана");
+        queue.add("Матвей");
+
+        int k = 3;
+
+        int m = 18;
+
+        int y = m / 10 * k; // кол-во клиентов, обслуженных до M минут, в примере 3
+
+        //идем с клиента под индексом 0
+        for (int i = 0; i < k; i++){
+            int z = i+y; //индекс клиента, который подходит к окну
+            if(z < queue.size()){
+                resultQueue.add(queue.get(z));
+            }
+        }
+
+        System.out.println("На " + m + " минуте у окон будут стоять: " + resultQueue);
     }
 }
