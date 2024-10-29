@@ -1,4 +1,4 @@
-package part6;
+package part6.task1;
 
 public class Tie extends Clothes implements ManClothes{
     Tie(Size size, int cost, String color) {

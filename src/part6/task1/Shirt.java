@@ -1,4 +1,4 @@
-package part6;
+package part6.task1;
 
 public class Shirt extends Clothes implements ManClothes, WomanClothes{
     Shirt(Size size, int cost, String color) {
